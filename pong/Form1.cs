@@ -19,7 +19,7 @@ namespace pong
         Rectangle player1 = new Rectangle(0, 180, 20, 20);
         Rectangle player2 = new Rectangle(355, 180, 20, 20);
         Rectangle Wsquare = new Rectangle(180, 180, 20, 20);
-        Rectangle Ysquare = new Rectangle(156, 456, 12, 12); 
+        Rectangle Ysquare = new Rectangle(180, 300, 12, 12); 
         
 
         int player1Score = 0;
@@ -137,10 +137,10 @@ namespace pong
         private void tick(object sender, EventArgs e)
         {
             //move ball 
-            WX = WXGen.Next(1, 500);
-            WY = WYGen.Next(1, 500); 
+            WX = WXGen.Next(1, 400);
+            WY = WYGen.Next(1, 400); 
 
-            YX = YYGen.Next(1, 500);
+            YX = YYGen.Next(1, 400);
 
             //move player 1 
             if (wDown == true && player1.Y > 0)
