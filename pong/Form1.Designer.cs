@@ -40,7 +40,7 @@
             this.p1ScoreLabel.AutoSize = true;
             this.p1ScoreLabel.BackColor = System.Drawing.Color.Transparent;
             this.p1ScoreLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.p1ScoreLabel.Location = new System.Drawing.Point(99, 19);
+            this.p1ScoreLabel.Location = new System.Drawing.Point(129, 19);
             this.p1ScoreLabel.Name = "p1ScoreLabel";
             this.p1ScoreLabel.Size = new System.Drawing.Size(14, 16);
             this.p1ScoreLabel.TabIndex = 0;
@@ -52,7 +52,7 @@
             this.winLabel.BackColor = System.Drawing.Color.Transparent;
             this.winLabel.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.winLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.winLabel.Location = new System.Drawing.Point(206, 203);
+            this.winLabel.Location = new System.Drawing.Point(307, 223);
             this.winLabel.Name = "winLabel";
             this.winLabel.Size = new System.Drawing.Size(62, 19);
             this.winLabel.TabIndex = 1;
@@ -64,7 +64,7 @@
             this.p2ScoreLabel.AutoSize = true;
             this.p2ScoreLabel.BackColor = System.Drawing.Color.Transparent;
             this.p2ScoreLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.p2ScoreLabel.Location = new System.Drawing.Point(315, 19);
+            this.p2ScoreLabel.Location = new System.Drawing.Point(538, 19);
             this.p2ScoreLabel.Name = "p2ScoreLabel";
             this.p2ScoreLabel.Size = new System.Drawing.Size(14, 16);
             this.p2ScoreLabel.TabIndex = 2;
@@ -81,7 +81,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(500, 500);
+            this.ClientSize = new System.Drawing.Size(701, 616);
             this.Controls.Add(this.p2ScoreLabel);
             this.Controls.Add(this.winLabel);
             this.Controls.Add(this.p1ScoreLabel);

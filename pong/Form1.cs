@@ -15,21 +15,21 @@ namespace pong
     public partial class Form1 : Form
     {
 
-
+        // starting spawns 
         Rectangle player1 = new Rectangle(0, 180, 20, 20);
-        Rectangle player2 = new Rectangle(355, 180, 20, 20);
-        Rectangle Wsquare = new Rectangle(180, 180, 20, 20);
-        Rectangle Ysquare = new Rectangle(180, 300, 12, 12); 
+        Rectangle player2 = new Rectangle(505, 180, 20, 20);
+        Rectangle Wsquare = new Rectangle(257, 180, 20, 20);
+        Rectangle Ysquare = new Rectangle(257, 300, 12, 12); 
         
-
+        // player score variables
         int player1Score = 0;
         int player2Score = 0;
-
+        // player speed variables 
         int player1Speed = 4;
         int player2Speed = 4;
         int ballXSpeed = -4;
         int ballYSpeed = 4;
-
+        // x and y variables
         int WX;
 
         int WY;
@@ -41,7 +41,7 @@ namespace pong
         
      
 
-
+        // key variables
         bool wDown = false;
         bool sDown = false;
         bool upArrowDown = false;
@@ -50,14 +50,14 @@ namespace pong
         bool dDown = false;
         bool leftDown = false;
         bool rightDown = false;
-
+        // creating rand gens 
         Random WXGen = new Random();
         Random WYGen = new Random();
         Random YXGen = new Random();
         Random YYGen = new Random(); 
 
         
-
+        // drawing utencils
         SolidBrush blueBrush = new SolidBrush(Color.DodgerBlue);
         SolidBrush whiteBrush = new SolidBrush(Color.White);
         SolidBrush orangeBrush = new SolidBrush(Color.Orange);
@@ -71,7 +71,7 @@ namespace pong
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
-            {
+            { // giving keys value
                 case Keys.W:
                     wDown = true;
                     break;
@@ -102,9 +102,11 @@ namespace pong
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
+            // give keys value
         {
             switch (e.KeyCode)
             {
+                
                 case Keys.W:
                     wDown = false;
                     break;
@@ -136,7 +138,7 @@ namespace pong
 
         private void tick(object sender, EventArgs e)
         {
-            //move ball 
+            //W and Y square spawn generators 
             WX = WXGen.Next(1, 400);
             WY = WYGen.Next(1, 400); 
 
@@ -182,11 +184,9 @@ namespace pong
             }
 
 
-            //check if ball hit top or bottom wall and change direction if it does 
-
-
-            //check if ball hits either player. If it does change the direction 
-            //and place the ball in front of the player hit 
+            
+            
+           // collison sound and code 
             SoundPlayer player = new SoundPlayer(Properties.Resources.boopSound);
 
            
@@ -199,6 +199,7 @@ namespace pong
                 Wsquare.Y = WY;
                 p1ScoreLabel.Text = $"{player1Score}";
                 player.Play();
+                player1Speed = 4; 
             }
             else if (player2.IntersectsWith(Wsquare))
             {
@@ -208,6 +209,7 @@ namespace pong
                 Wsquare.Y = WY;
                 p2ScoreLabel.Text = $"{player2Score}";
                 player.Play();
+                player2Speed = 4; 
             }
 
             if (player1.IntersectsWith(Ysquare))
@@ -234,14 +236,14 @@ namespace pong
               
 
             
-            //else if (playerturn == 1);
+            
             
 
             
-            //check if a player missed the ball and if true add 1 to score of other player  
+          
         
 
-            // check score and stop game if either player is at 3 
+            // checking  score and stop game if either player is at 5 outputting win text 
             if (player1Score == 5)
             {
                 ticks.Enabled = false;
@@ -264,6 +266,7 @@ namespace pong
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
+            //drawing everything
             e.Graphics.FillRectangle(blueBrush, player1);
             e.Graphics.FillRectangle(orangeBrush, player2);
             e.Graphics.FillRectangle(whiteBrush, Wsquare);
